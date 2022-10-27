@@ -23,9 +23,11 @@ jobs:
           cd Release/
           ls
 
-      - uses: actions/setup-node@v3 # Appears to be needed solely to avoid auth issues with npm publish
+      - name: Setup .npmrc file to publish to npm
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: 18 # Exact version not important
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Publish to NPM
         run: npm publish
