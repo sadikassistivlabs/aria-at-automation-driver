@@ -1,4 +1,4 @@
-name: Publish to Npm
+name: Publish to NPM
 on:
   release:
     types: [created]
@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: 18
 
-      - name: Publish to Npm
+      - name: Publish to NPM
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
